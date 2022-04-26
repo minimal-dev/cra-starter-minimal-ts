@@ -1,0 +1,125 @@
+@import '~styles/mixins';
+
+.footer {
+  position: relative;
+  padding-top: 48px;
+  margin-top: 88px;
+  overflow: hidden;
+
+  @include b-d(xl) {
+    padding-top: 72px;
+  }
+
+  @include b-d(lg) {
+    padding-top: 64px;
+  }
+
+  @include b-d(md) {
+    padding-top: 40px;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+
+    @include b-up(xl) {
+      right: calc(50% - 720px - 150px);
+      bottom: -128px;
+      width: 955px;
+      height: 284px;
+    }
+  }
+
+  &_inner {
+    display: grid;
+    row-gap: 12px;
+    color: $gray-300;
+
+    @include b-d(xxl) {
+      row-gap: 20px;
+    }
+
+    @include b-d(md) {
+      row-gap: 56px;
+      text-align: center;
+    }
+  }
+
+  &_bottom {
+    display: grid;
+    column-gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: $gray-300;
+
+    @include b-up(md) {
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include b-o(lg) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    @include b-d(md) {
+      row-gap: 16px;
+      padding-top: 0;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &_nav {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: end;
+    padding: 0;
+    margin: -5px;
+    list-style: none;
+
+    @include b-d(md) {
+      justify-content: center;
+      order: -1;
+      margin: -6px 0;
+    }
+
+    &_item {
+      position: relative;
+      white-space: nowrap;
+
+      &:not(:first-child) {
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: -5.5px;
+          width: 1px;
+          height: 12px;
+          content: '';
+          background: $gray-300;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &_link {
+      display: block;
+      padding: 5px;
+      color: $gray-300;
+
+      &:hover {
+        color: $white;
+      }
+
+      @include b-d(md) {
+        padding: 6px;
+      }
+    }
+  }
+}

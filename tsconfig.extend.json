@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "~api": ["src/api.js"],
+      "~styles": ["src/styles"],
+      "~components": ["src/components"],
+      "~containers": ["src/containers"],
+      "~contexts": ["src/contexts"],
+      "~providers": ["src/providers"],
+      "~img": ["src/assets/img"],
+      "fonts": ["src/assets/fonts"],
+      "~pages": ["src/pages"],
+      "~hooks": ["src/hooks"],
+      "~routes": ["src/routes"],
+      "~utils": ["src/utils"],
+      "~*": ["./src/*"]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import '~styles/mixins';
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 16px;
+  align-items: center;
+  justify-content: start;
+}

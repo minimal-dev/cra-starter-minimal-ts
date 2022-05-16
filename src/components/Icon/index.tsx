@@ -9,11 +9,12 @@ interface IconPropTypes extends React.ComponentPropsWithoutRef<'svg'> {
   name: string
   size: number | [number, number]
   viewbox?: number | [number, number]
+  isFromInlineDefs?: boolean
 }
 
 const Icon = React.forwardRef<SVGSVGElement, IconPropTypes>(
   // eslint-disable-next-line react/prop-types
-  ({ name, size, viewbox, ...rest }, ref) => {
+  ({ name, size, viewbox, isFromInlineDefs = false, ...rest }, ref) => {
     const sizes = paramToArray(size)
     const vbox = viewbox ? paramToArray(viewbox) : sizes
     return (
@@ -24,8 +25,9 @@ const Icon = React.forwardRef<SVGSVGElement, IconPropTypes>(
         height={sizes[1]}
         viewBox={`0 0 ${vbox[0]} ${vbox[1]}`}
         ref={ref}
+        fill="currentColor"
       >
-        <use fill="currentColor" xlinkHref={`${sprite}#${name}`} />
+        <use xlinkHref={`${isFromInlineDefs ? '' : sprite}#${name}`} />
       </svg>
     )
   }

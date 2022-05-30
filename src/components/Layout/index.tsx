@@ -7,7 +7,11 @@ import Footer from '~components/Footer'
 import SVGDefs from './SVGDefs'
 import * as style from './Layout.module.scss'
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+  children: any
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={style.layout}>
       <Header />

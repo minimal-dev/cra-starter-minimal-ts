@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { parse } from 'svg-parser'
 
@@ -8,11 +7,13 @@ import svgSrc from '~components/Icon/icons.svg'
 
 import * as style from './SVGSprite.module.scss'
 
-/**
- * SVGSprite component
- */
-const SVGSprite = (props) => {
-  const { className, variant, ...rest } = props
+interface SVGSpriteProps {
+  className?: string
+  variant?: 'def' | 'sl'
+}
+
+const SVGSprite: React.FC<SVGSpriteProps> = (props) => {
+  const { className, variant = 'def', ...rest } = props
 
   const [symbols, setSymbols] = useState([])
 
@@ -21,14 +22,15 @@ const SVGSprite = (props) => {
       .then((res) => res.text())
       .then((res) => {
         const parsedRes = parse(res)
+        // @ts-ignore
         const parsedSymbols = parsedRes?.children?.[0]?.children
 
         if (!parsedSymbols?.length) return
 
         const formattedSymbols = parsedSymbols
-          .filter((symbol) => symbol.tagName === 'symbol')
-          .map((symbol) => symbol.properties)
-          .map((symbol) => {
+          .filter((symbol: any) => symbol.tagName === 'symbol')
+          .map((symbol: any) => symbol.properties)
+          .map((symbol: any) => {
             const { viewBox = '0 0 32 32' } = symbol
             const [, , width, height] = viewBox.split(' ')
 
@@ -60,7 +62,7 @@ const SVGSprite = (props) => {
         </tr>
       </thead>
       <tbody>
-        {symbols.map((symbol) => (
+        {symbols.map((symbol: any) => (
           <tr>
             <td>
               <div className={style.iconWrapper} title={symbol.id}>
@@ -80,16 +82,6 @@ const SVGSprite = (props) => {
       </tbody>
     </table>
   )
-}
-
-SVGSprite.defaultProps = {
-  className: '',
-  variant: 'def',
-}
-
-SVGSprite.propTypes = {
-  className: PropTypes.string,
-  variant: PropTypes.oneOf(['def', 'sl']),
 }
 
 export default SVGSprite

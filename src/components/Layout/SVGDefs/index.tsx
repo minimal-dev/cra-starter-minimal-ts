@@ -1,10 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import * as style from './SVGDefs.module.scss'
 
-const SVGDefs = (props) => {
+interface SVGDefsProps {
+  className?: string
+}
+
+const SVGDefs: React.FC<SVGDefsProps> = (props) => {
   const { className, ...rest } = props
 
   return (
@@ -37,14 +40,6 @@ const SVGDefs = (props) => {
       </symbol>
     </svg>
   )
-}
-
-SVGDefs.defaultProps = {
-  className: '',
-}
-
-SVGDefs.propTypes = {
-  className: PropTypes.string,
 }
 
 export default SVGDefs

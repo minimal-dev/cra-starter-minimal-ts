@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://min.studio" target="_blank"><img align=middle width="100" alt="Minimal" src="https://user-images.githubusercontent.com/4237964/152536934-bc22402a-25ba-4d20-9ff8-fc785ee1f3ea.png"></a>
+    <a href="https://min.studio" target="_blank"><img align=middle width="100" alt="Minimal" src="https://user-images.githubusercontent.com/4237964/222852579-9a08f4ec-efed-4d7b-b278-13a0163f7d26.svg"></a>
     <a href="https://create-react-app.dev/"  target="_blank"><img align=middle alt="Create React App" src="https://create-react-app.dev/img/logo.svg" width="136" /></a>
 </p>
 

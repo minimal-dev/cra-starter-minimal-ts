@@ -35,7 +35,7 @@
     "@commitlint/cli": "17.7.1",
     "@commitlint/config-conventional": "17.7.0",
     "@types/react-dom": "18.2.8",
-    "@types/react-helmet": "6.1.6",
+    "@types/react-helmet": "6.1.7",
     "@types/svg-parser": "2.0.3",
     "@typescript-eslint/eslint-plugin": "6.4.0",
     "@typescript-eslint/parser": "6.4.0",

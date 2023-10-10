@@ -34,7 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.7.2",
     "@commitlint/config-conventional": "17.7.0",
-    "@types/react-dom": "18.2.10",
+    "@types/react-dom": "18.2.11",
     "@types/react-helmet": "6.1.7",
     "@types/svg-parser": "2.0.4",
     "@typescript-eslint/eslint-plugin": "6.4.0",

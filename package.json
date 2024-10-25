@@ -18,7 +18,7 @@
     "sass": "1.80.3",
     "svg-parser": "2.0.4",
     "typescript": "5.6.3",
-    "web-vitals": "3.5.2"
+    "web-vitals": "4.2.4"
   },
   "scripts": {
     "start": "craco start",
